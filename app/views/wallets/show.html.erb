@@ -1,0 +1,14 @@
+<h2>Nom du wallet : <%= @wallet.name %></h2>
+
+
+<section>
+  <p>Blockchain: <%= @wallet.blockchain.name %></p>
+  <p>
+    Description:
+  </p>
+  <p>
+      <%= @wallet.blockchain.description %>
+  </p>
+</section>
+
+<a href="<%= wallets_path %>">Retour aux wallets</a>

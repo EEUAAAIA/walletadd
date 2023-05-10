@@ -1,0 +1,27 @@
+<h2>New blockchain 1</h2>
+
+<%= turbo_frame_tag "new_blockchain" do %>
+<br/>
+  <section class="adding">
+    <%= form_for @user_blockchain do |f| %>
+      <%= f.fields_for :blockchain do |b| %>
+        <p>
+          <%= b.text_field :name, placeholder: "Blockchain's name" %>
+        </p>
+        <p>
+          <%= b.text_area :description, placeholder: "Blockchain's description" %>
+        </p>
+      <% end %>
+        <p>
+          <button type="submit"> Enregistrer la blockchain </button>
+        </p>
+        <p>
+          <a href="<%= user_blockchains_path %>">Annuler</a>
+        </p>
+    <% end %>
+  </section>
+<% end %>
+
+<p>
+  <a href="<%= user_blockchains_path %>">Retour aux blockchains</a>
+</p>

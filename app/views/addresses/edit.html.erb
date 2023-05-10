@@ -1,0 +1,26 @@
+<h1> Editer une address </h1>
+
+<%= form_for @address do |f| %>
+
+  <h3>Address</h3>
+    <p>
+      <%= f.text_field :address %>
+    </p>
+
+  <h3>Username</h3>
+    <p>
+      <%= f.text_area :username %>
+    </p>
+
+  <h3>Wallet's name</h3>
+    <p>
+      <%= f.select :wallet_id, options_for_select(@wallets, @address.wallet_id) %>
+    </p>
+
+<button type="submit"> Enregistrer les modifications </button>
+
+<% end %>
+
+<p>
+  <a href="<%= addresses_path %>">Retour aux addresses</a>
+</p>

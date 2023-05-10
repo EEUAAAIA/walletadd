@@ -1,0 +1,19 @@
+<h1> Editer le wallet </h1>
+
+<%= form_for @wallet do |f| %>
+
+  <h3>Nom du Wallet</h3>
+    <%= f.text_field :name %>
+
+    <h3>Nom de la blockchain associée </h3>
+      <p>
+        <%= f.select :blockchain_id, options_for_select(@blockchains, @wallet.blockchain_id) %>
+      </p>
+
+<button type="submit"> Enregistrer les modifications </button>
+
+<% end %>
+
+<p>
+  <a href="<%= blockchains_path %>">Retour aux blockchains</a>
+</p>

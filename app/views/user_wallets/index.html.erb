@@ -1,0 +1,76 @@
+<section>
+  <% if notice.present? %>
+    <p>
+      <%= notice %>
+    </p>
+  <% end %>
+</section>
+
+<h2>Liste de mes wallets </h2>
+<br/>
+<br/>
+
+<!--Création de wallet-->
+<section class="adding">
+    <%= link_to "Créer un wallet",
+                  new_user_wallet_path,
+                  class: 'button_add',
+                  data: { turbo_frame: "new_wallet" } %>
+</section>
+<section>
+  <%= turbo_frame_tag "new_wallet" %>
+</section>
+<br/>
+
+<!--Affichage mobile/tabllete-->
+<section class="info_mobile">
+  <% @user_wallets.each do |user_wallet| %>
+    <article class="info_mobile_list">
+      <p>
+        <%= user_wallet.wallet.name %>
+      </p>
+      <p class="action">
+        <a href="<%= user_wallet_path(user_wallet.id)%>">
+          <!--SVG Lire la suite--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.707 20.293l-4.146-4.146a7.98 7.98 0 001.646-4.883c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8a7.98 7.98 0 004.883-1.646l4.146 4.146a1 1 0 101.414-1.414zM4 10c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z"/></svg>
+        </a>
+        <a href="<%= edit_user_wallet_path(user_wallet.id)%>">Editer</a>
+        <%= button_to "Delete",
+                        user_wallet_path(user_wallet),
+                        method: :delete,
+                        data: { action: "user_wallet#delete" }%>
+      </p>
+    </article>
+  <% end %>
+</section>
+
+<!--Affichage pour écran ordinateur-->
+<section class="info_pc">
+  <table class="table_info">
+    <thead >
+      <tr>
+        <th class="top-left">Wallet's name</th>
+        <th class="top-right">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_wallets.each do |user_wallet| %>
+      <tr>
+        <td class="bottom-left">
+          <%= user_wallet.wallet.name %>
+          <br/>
+        </td>
+        <td class="bottom-right">
+          <p class="action">
+            <a href="<%= user_wallet_path(user_wallet.id)%>">Lire la suite</a>
+            <a href="<%= edit_user_wallet_path(user_wallet.id)%>">Editer</a>
+            <%= button_to "Delete",
+                            user_wallet_path(user_wallet),
+                            method: :delete,
+                            data: { action: "user_wallet#delete" }%>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

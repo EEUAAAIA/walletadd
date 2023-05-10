@@ -1,0 +1,120 @@
+<section>
+  <% if notice.present? %>
+    <p>
+      <%= notice %>
+    </p>
+  <% end %>
+</section>
+
+<h2>Liste de mes addresses </h2>
+<br/>
+<br/>
+
+<!--Création d'address-->
+<section class="adding">
+    <%= link_to "Créer une address",
+                  new_user_address_path,
+                  class: 'button_add',
+                  data: { turbo_frame: "new_address" } %>
+</section>
+<section>
+  <%= turbo_frame_tag "new_address" %>
+</section>
+<br/>
+
+<!--
+<section>
+  <% @user_addresses.each do |user_address| %>
+        <p>
+          <%= user_address.address.username %>
+        </p>
+        <p>
+          <%= user_address.address.address %>
+        </p>
+        <p>
+          <a href="<%= user_address_path(user_address.id)%>">Lire la suite</a>
+        </p>
+        <p>
+          <a href="<%= edit_user_address_path(user_address.id)%>">Editer</a>
+        </p>
+        <p>
+          <%= button_to "Delete",
+                          user_address_path(user_address),
+                          method: :delete,
+                          data: { action: "user_address#delete" }%>
+        </p>
+
+  <% end %>
+</section>
+-->
+
+<!--Affichage mobile/tabllete-->
+<section class="info_mobile">
+  <% @user_addresses.each do |user_address| %>
+    <article data-controller="clipboard" class="info_mobile_list">
+      <p>
+        Username: <%= user_address.address.username %>
+      </p>
+      <p>
+        Address: <span class="span_address"><%= user_address.address.address %></span>
+      </p>
+      <p class="action">
+        <a data-action="click->clipboard#copy">
+        <!--Copier Coller-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M14 1H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM5 19V5h9v14H5z"/>
+            <path d="M17 4H7a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM8 6h8v2H8V6zm0 4h8v2H8v-2zm0 4h6v2H8v-2z"/>
+          </svg>
+        </a>
+        <a href="<%= user_address_path(user_address.id)%>">
+          <!--SVG Lire la suite--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.707 20.293l-4.146-4.146a7.98 7.98 0 001.646-4.883c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8a7.98 7.98 0 004.883-1.646l4.146 4.146a1 1 0 101.414-1.414zM4 10c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z"/></svg>
+        </a>
+        <a href="<%= edit_user_address_path(user_address.id)%>">Editer</a>
+        <%= button_to "Delete",
+                        user_address_path(user_address),
+                        method: :delete,
+                        data: { action: "user_address#delete" }%>
+      </p>
+    </article>
+  <% end %>
+</section>
+
+<!--Affichage pour écran ordinateur-->
+<section class="info_pc">
+  <table class="table_info"  data-controller="clipboard">
+    <thead >
+      <tr>
+        <th class="top-left">Username</th>
+        <th>Address</th>
+        <th class="top-right">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_addresses.each do |user_address| %>
+      <tr>
+        <td class="bottom-left">
+          <%= user_address.address.username %>
+          <br/>
+        </td>
+        <td>
+          <span class="span_address"><%= user_address.address.address %></span>
+          <br/>
+        </td>
+        <td class="bottom-right">
+          <p class="action">
+            <button data-action="click->clipboard#copy" class="action_element">Copy to Clipboard</button>
+            <a href="<%= user_address_path(user_address.id)%>">Lire la suite</a>
+            <a href="<%= edit_user_address_path(user_address.id)%>">Editer</a>
+            <%= button_to "Delete",
+                            user_address_path(user_address),
+                            method: :delete,
+                            class: "delete-btn",
+                            data: { action: "user_address#delete" }%>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,17 @@
+<h1> Editer la blockchain </h1>
+
+<%= form_for @blockchain do |f| %>
+
+  <h3>Nom de la blockchain</h3>
+    <%= f.text_field :name %>
+
+  <h3>Description de la blockchain</h3>
+    <%= f.text_area :description %>
+
+<button type="submit"> Enregistrer les modifications </button>
+
+<% end %>
+
+<p>
+  <a href="<%= blockchains_path %>">Retour aux blockchains</a>
+</p>

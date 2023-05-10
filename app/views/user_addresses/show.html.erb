@@ -1,0 +1,9 @@
+<h2>Informations de <%= @user_address.address.username %></h2>
+
+
+<section>
+  <p><%= @user_address.address.address %></p>
+  <p><%= @user_address.address.wallet.name %></p>
+
+</section>
+<a href="<%= user_blockchains_path %>">Retour aux blockchains</a>

@@ -1,0 +1,33 @@
+<h2>New address</h2>
+
+<%= turbo_frame_tag "new_address" do %>
+
+  <section class="adding">
+    <br>
+    <%= form_for @address do |f| %>
+      <p>
+        <%= f.text_area :username, placeholder: "Username" %>
+      </p>
+      <p>
+        <%= f.text_area :address, placeholder: "Adress" %>
+      </p>
+      <p>
+        <%= f.label :wallet_id, "Wallet" %>
+        <%= f.select :wallet_id, options_for_select(@wallets, @address.wallet_id) %>
+      </p>
+      <p>
+        <button type="submit"> Enregistrer l'address </button>
+      </p>
+      <p>
+        <a href="<%= addresses_path %>">Annuler</a>
+      </p>
+    <% end %>
+  </section>
+
+<% end %>
+
+
+
+<p>
+  <a href="<%= addresses_path %>">Retour aux addresses</a>
+</p>

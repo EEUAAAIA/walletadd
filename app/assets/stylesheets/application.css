@@ -1,0 +1,271 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*===GENERAL SETTINGS===*/
+*{
+  font-family: "Comfortaa", cursive;
+}
+
+  body {
+    text-align: justify;
+    margin: 30px;
+    background-color: #EDF2F7;
+  }
+
+  .footer-content {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  .developer-name {
+    font-weight: bold;
+  }
+  .site-title-container {
+    text-align: center;
+  }
+
+  .site-title {
+    color: #07A0C3;
+    border: 1px solid #07A0C3;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  h1{
+    color: #B63A87;
+  }
+
+  .title_underline{
+    text-align: center;
+  }
+
+  h2{
+    border-bottom: 1px solid #5DFDCB;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .identification{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .button_log_in{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #6AFDF1;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+  }
+
+  .button_log_out{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #BFD0E0;
+    color: white;
+    text-decoration: none;
+  }
+
+  #home_button{
+    color: #5DFDCB;
+    border: 1px solid #5DFDCB;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+  }
+
+ .burger_close_img{
+   width: 50px;
+   height: 50px;
+ }
+
+   .burger_close{
+     display: none;
+   }
+
+   .menu-links {
+     display: none;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     list-style: none;
+   }
+
+   .menu-links li{
+     padding: 10px;
+     margin: 2px;
+   }
+
+   .menu-links a{
+     text-decoration: none;
+     border-radius: 10px;
+     padding: 10px;
+     background-color: #5DFDCB;
+     color: white;
+   }
+
+   .action {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .action a {
+      margin: 5px;
+    }
+
+    .action_element{
+      margin: 5px;
+    }
+
+    td{
+      padding: 10px;
+    }
+
+  .table-no-borders {
+      border: none;
+    }
+
+    tbody td:nth-child(odd) {
+      background-color: #C9F9FF;
+      margin : 2px;
+    }
+
+    tbody td:nth-child(even) {
+      background-color: #90D7FF;
+      margin: 2px;
+    }
+
+    .info_mobile{
+      display: none;
+    }
+
+    .button_add{
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #D9B9FF;
+      color: white;
+      text-decoration: none;
+    }
+
+    .table_info {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-spacing: 0 10px
+    }
+
+    .table_info th {
+      border: none;
+    }
+    .table_info td {
+      border: 1px solid #BFD0E0;
+    }
+
+    .table_info th, .table_info td {
+      vertical-align: middle;
+      text-align: center;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    td.bottom-left {
+      background-color: #C9F9FF;
+    }
+
+    td.bottom-right {
+      background-color: #90D7FF;
+    }
+
+    th.top-left, td.bottom-left {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    th.top-right, td.bottom-right {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+
+
+/*===MOBILE===*/
+ @media (max-width: 460px){
+   h1{
+     border: 1px solid #B63A87;
+     border-radius: 10px;
+     padding: 10px;
+     text-align: center;
+   }
+
+   .info_mobile{
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     margin: 0;
+     height: 100%;
+   }
+
+   .info_mobile_list {
+     border: 1px solid black;
+     border-radius: 10px;
+     padding: 10px;
+     margin: 10px;
+    }
+
+     .adding{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+
+   .info_pc{
+     display: none;
+   }
+ }
+
+ /*===TABLET===*/
+
+ @media (min-width: 460px) and (max-width: 1079px){
+
+
+ }
+
+ /*===PC / MAC===*/
+
+ @media (min-width: 1080px){
+
+   .burger-menu{
+     display: none;
+   }
+
+   .menu-links {
+     display: flex;
+     flex-direction: row;
+   }
+ }

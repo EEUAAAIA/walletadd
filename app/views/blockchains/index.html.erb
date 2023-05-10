@@ -1,0 +1,77 @@
+<h1>Blockchains</h1>
+
+<section>
+    <% if notice.present? %>
+      <p>
+        <%= notice %>
+      </p>
+    <% end %>
+</section>
+<br>
+
+<!--Création de blockchain-->
+<section class="adding">
+  <p>
+    <%= link_to "Créer une blockchain",
+                  new_blockchain_path,
+                  class: 'button_add',
+                  data: { turbo_frame: "new_blockchain" } %>
+  </p>
+  <br>
+</section>
+<section>
+    <%= turbo_frame_tag "new_blockchain" %>
+</section>
+
+<!--Affichage mobile/tabllete-->
+<section class="info_mobile">
+  <% @blockchains.each do |blockchain| %>
+  <article class="info_mobile_list">
+    <p>
+    <%= blockchain.name %>
+    </p>
+    <p class="action">
+      <a href="<%= blockchain_path(blockchain.id)%>">
+        <!--Lire la suite-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.707 20.293l-4.146-4.146a7.98 7.98 0 001.646-4.883c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8a7.98 7.98 0 004.883-1.646l4.146 4.146a1 1 0 101.414-1.414zM4 10c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z"/></svg>
+      </a>
+      <a href="<%= edit_blockchain_path(blockchain.id)%>">Editer</a>
+      <%= button_to "Delete", blockchain_path(blockchain),
+                      method: :delete,
+                      data: { action: "blockchain#delete" }%>
+    </p>
+  </article>
+  <% end%>
+</section>
+
+<!--Affichage pour écran ordinateur-->
+<section class="info_pc">
+  <table class="table_info">
+    <thead >
+      <tr>
+        <th class="top-left">Blockchain's name</th>
+        <th class="top-right">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @blockchains.each do |blockchain| %>
+      <tr>
+          <td class="bottom-left">
+            <%= blockchain.name %>
+            <br/>
+          </td>
+          <td class="bottom-right">
+            <p class="action">
+              <a href="<%= blockchain_path(blockchain.id)%>" class="action_element">Lire la suite</a>
+              <a href="<%= edit_blockchain_path(blockchain.id)%>" class="action_element">Editer</a>
+              <%= button_to "Delete",
+                              blockchain_path(blockchain),
+                              method: :delete,
+                              data: { action: "blockchain#delete" }%>
+          </p>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

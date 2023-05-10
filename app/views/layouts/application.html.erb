@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WalletAdd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <style>
+		    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <section class="identification">
+        <% if user_signed_in? %>
+          Hello, <%= current_user.email %> <strong><%= link_to ' Log out', destroy_user_session_path, method: :delete, class: 'button_log_out' %></strong>
+        <% else %>
+          <%= link_to 'Log in', new_user_session_path, class: 'button_log_in' %>
+          <%= link_to 'Sign up', new_user_registration_path, class: 'button_log_in'%>
+        <% end %>
+      </section>
+      <section class="site-title-container">
+        <h1 class="site-title">walletadd_6</h1>
+      </section>
+      <nav data-controller="burger" data-action="resize@window->burger#globalResize">
+        <section class="burger-menu">
+          <button class="burger_icon" data-action="click->burger#openBurger ">
+            <img src="<%= asset_path('burger_icon.png') %>" alt="Menu">
+          </button>
+          <button class="burger_close" data-action="click->burger#closeBurger">
+            <img src="<%= asset_path('burger_close.png') %>" class="burger_close_img" alt="Fermer">
+          </button>
+        </section>
+        <ul class="menu-links" >
+            <li>
+              <a href="<%= root_path %>" id="home_button">Home</a>
+            </li>
+            <li>
+              <a href="<%= addresses_path %>">Addresses</a>
+            </li>
+            <li>
+              <a href="<%= blockchains_path %>">Blockchains</a>
+            </li>
+            <li>
+              <a href="<%= wallets_path %>">Wallets</a>
+            </li>
+            <li>
+              <a href="<%= user_blockchains_path %>">Blockchain 1</a>
+            </li>
+            <li>
+              <a href="<%= user_wallets_path %>">Wallet 1</a>
+            </li>
+            <li>
+              <a href="<%= user_addresses_path %>">Address 1</a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <section class="footer-content">
+        <p>&copy; 2023 WalletAdd. Tous droits réservés. Développé par <span class="developer-name">Matthias CANTACUZENE</span>.</p>
+      </section>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<h2>New Wallet 1</h2>
+
+<%= turbo_frame_tag "new_wallet" do %>
+<br/>
+  <section class="adding">
+    <%= form_for @user_wallet do |f| %>
+      <%= f.fields_for :wallet do |w| %>
+        <p>
+          <%= w.text_field :name, placeholder: "Wallet's name" %>
+        </p>
+        <p>
+          <%= w.label :blockchain_id, "Blockchain" %>
+          <%= w.select :blockchain_id, options_for_select(@blockchains) %>
+        </p>
+      <% end %>
+        <p>
+          <button type="submit"> Enregistrer le wallet </button>
+        </p>
+        <p>
+          <a href="<%= user_wallets_path %>">Annuler</a>
+        </p>
+    <% end %>
+  </section>
+<% end %>
+
+<p>
+  <a href="<%= user_wallets_path %>">Retour aux wallets</a>
+</p>
