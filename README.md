@@ -8,7 +8,7 @@ The project uses modern technologies and frameworks like Turbo, Stimulus, and Ru
 
 # Build app
 
- bundle install
+ $ bundle install
  
  
  # Create database and run migrations
