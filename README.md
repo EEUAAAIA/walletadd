@@ -8,14 +8,17 @@ The project uses modern technologies and frameworks like Turbo, Stimulus, and Ru
 
 # Build app
 
- $ bundle install
+  bundle install
  
  
  # Create database and run migrations
  
  rails db:create 
+ 
  rake db:migrate
+ 
  rails db:migrate
+ 
  rails db:seed
 
 #################################################
