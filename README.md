@@ -6,6 +6,12 @@ The project uses modern technologies and frameworks like Turbo, Stimulus, and Ru
 
 ####################################################
 
+# Ruby and bundler installation
+
+Install ruby
+
+Install bundler gem
+
 # Build app
 
   bundle install
@@ -65,6 +71,12 @@ La solution walletadd vise à offrir une plateforme complète pour gérer et org
 Le projet utilise des technologies modernes et des frameworks tels que Turbo, Stimulus et Ruby on Rails pour offrir une expérience utilisateur fluide.
 
 #################################
+
+# Installation de Ruby et bundler
+
+Install ruby
+
+Install bundler gem
 
 # Créer une application
 
