@@ -4,7 +4,6 @@
 The walletadd solution aims to offer a complete platform to manage and organize blockchains, addresses and digital wallets. Among its functionalities, we find the possibility of copying and pasting addresses and an authentication system currently being implemented.
 The project uses modern technologies and frameworks like Turbo, Stimulus, and Ruby on Rails to deliver smooth user experience.
 
-####################################################
 
 # Ruby and bundler installation
 
@@ -27,7 +26,6 @@ Install bundler gem
  
  rails db:seed
 
-#################################################
 # Tutorial: Creating an account, creating a blockchain and adding a wallet
 
 In this tutorial, we will explain how to create an account with an email address and password, create a blockchain, add a wallet associated with this blockchain and finally add your wallet address. Follow the steps below to accomplish these tasks.
@@ -70,8 +68,6 @@ In this tutorial, we will explain how to create an account with an email address
 La solution walletadd vise à offrir une plateforme complète pour gérer et organiser des blockchains, des adresses et des wallets numériques. Parmi ses fonctionnalités, on retrouve la possibilité copier-coller des adresses et un système d'authentification en cours d’implémentation.
 Le projet utilise des technologies modernes et des frameworks tels que Turbo, Stimulus et Ruby on Rails pour offrir une expérience utilisateur fluide.
 
-#################################
-
 # Installation de Ruby et bundler
 
 Install ruby
@@ -89,7 +85,6 @@ rails db:create
  rails db:migrate
  rails db:seed
 
-#################################################
 
 # Tutoriel : Création d'un compte, création d'une blockchain et ajout d'un wallet
 
