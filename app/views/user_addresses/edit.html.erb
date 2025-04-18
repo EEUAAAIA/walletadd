@@ -1,15 +1,13 @@
-<h1> Editer une Address </h1>
+<h1><%= t('user_address.edit.h1') %></h1>
 
 <%= form_for @user_address do |f| %>
 
-  <h3>Modification d'une Address</h3>
-
   <%= f.fields_for :address do |a| %>
     <p>
-      Name :  <%= a.text_field :username %>
+      Alias: <%= a.text_field :username %>
     </p>
     <p>
-      Address :  <%= a.text_field :address %>
+      <%= t('user_address.index.address') %>:  <%= a.text_field :address %>
     </p>
 
     <p>
@@ -17,10 +15,10 @@
     </p>
   <% end %>
 
-  <button type="submit"> Enregistrer les modifications </button>
+  <button type="submit"><%= t('user_address.edit.save') %></button>
 
 <% end %>
 
 <p>
-  <a href="<%= user_addresses_path %>">Retour aux addresses</a>
+  <a href="<%= user_addresses_path %>"><%= t('user_address.edit.back_address') %></a>
 </p>

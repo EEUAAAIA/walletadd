@@ -1,0 +1,121 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+fr:
+  devise:
+    sessions:
+      heading: "Bienvenue sur notre plateforme wallet.add"
+      intro: "Découvrez la solution ultime pour gérer facilement et en toute sécurité vos adresses de portefeuilles numériques sur différentes blockchains. Notre plateforme innovante a été spécialement conçue pour vous aider à organiser et gérer vos actifs numériques de manière simple et conviviale.
+      \n\nNotre mission est de rendre la gestion de vos adresses de portefeuilles numériques aussi simple que possible, en vous offrant un outil complet et intuitif pour suivre, organiser et gérer toutes vos adresses en un seul endroit.
+      \n\nFonctionnalités clés:
+      \n\n1. Ajout et gestion d'adresses pour diverses blockchains : Notre plateforme prend en charge un large éventail de blockchains, y compris Bitcoin, Ethereum, Litecoin et bien d'autres. Ajoutez vos adresses en quelques clics et commencez à les gérer dès aujourd'hui.
+      \n\n2. Organisation et suivi des wallets : Créez des catégories personnalisées pour vos portefeuilles, attribuez-leur des noms et organisez-les comme bon vous semble. Vous pouvez également ajouter des notes pour chaque wallet afin de garder une trace de vos transactions et de vos actifs.
+      \n\n3. Sécurité et confidentialité : Nous prenons la sécurité et la confidentialité de vos données très au sérieux. Notre plateforme utilise des technologies de cryptage de pointe pour protéger vos informations et garantir que seuls vous y ait accès.
+      \n\n4. Interface utilisateur conviviale : Notre interface utilisateur élégante et moderne rend la gestion de vos adresses de portefeuilles numériques un plaisir. Naviguez facilement entre vos wallets et vos adresses, et profitez de notre plateforme sans tracas.
+      \n\nInscrivez-vous dès maintenant et découvrez comment notre plateforme de gestion d'adresses de portefeuilles numériques peut simplifier et améliorer votre expérience avec les actifs numériques. Rejoignez la révolution et prenez le contrôle de vos investissements en crypto-monnaie dès aujourd'hui !"
+    password: "Mot de passe"
+    forget_password: "Mot de passe oublié?"
+    confirm_password: "Confirmez votre mot de passe"
+    remember_me: "Se souvenir de moi"
+    password_character_minimum: "(%{count} caractères minimum)"
+
+
+
+  header:
+    home: "Accueil"
+    wallet: "Porte-feuille"
+    address: "Adresses"
+    log_in: "Se connecter"
+    sign_up: "S'inscrire"
+
+  footer:
+    right: "Tous droits réservés. Développé par "
+
+  home:
+    index:
+      h2: "Gérez vos actifs numériques en toute simplicité"
+      intro: "Wallet Ad est une plateforme pensée pour vous aider à centraliser, organiser et sécuriser vos actifs numériques en toute simplicité. \n\nQue vous soyez un passionné de crypto, un développeur, ou un investisseur curieux, notre solution vous permet de gérer de manière structurée l’ensemble de vos blockchains, wallets et adresses en quelques clics.
+      \n\n Utilisez Wallet Ad pour :
+      \n• Documenter les blockchains que vous suivez ou dans lesquelles vous investissez,
+      \n• Créer et gérer vos wallets en lien avec chaque blockchain,
+      \n• Organiser vos adresses associées à vos wallets pour un suivi optimal de vos transactions.
+      \n\nLa plateforme est conçue pour rester simple, sécurisée et adaptable à votre usage, que vous soyez dans une démarche personnelle, professionnelle ou pédagogique.
+      "
+      blockchain:
+        title: "Blockchain"
+        content: "Ici, vous pouvez ajouter, modifier et supprimer des blockchains pour organiser et suivre l'évolution des différentes technologies de blockchain que vous utilisez. En ajoutant une blockchain, vous pourrez ensuite y associer des wallets spécifiques pour faciliter la gestion de vos actifs numériques. Notre plateforme prend en charge plusieurs blockchains populaires et émergentes pour répondre à vos besoins diversifiés en matière de crypto-monnaies.
+        \n\nPetite particularité : lorsqu’une blockchain que vous entrez n’existe pas encore dans notre base, elle y est automatiquement ajoutée. Cela permet à la communauté de bénéficier des ajouts de chacun, et d’avoir une base plus riche et plus complète.
+        \n\nC’est la seule donnée partagée entre les utilisateurs, tout le reste reste strictement personnel.
+        "
+      wallet:
+        title: "Porte-feuille"
+        content: "Notre système de gestion de wallets vous permet de créer, gérer et suivre facilement vos wallets numériques associés à différentes blockchains. En ajoutant un wallet, vous pouvez sélectionner la blockchain correspondante à partir de celles que vous avez ajoutées précédemment. Notre plateforme facilite la gestion de vos actifs numériques en regroupant tous vos wallets en un seul endroit. Vous pouvez facilement ajouter, modifier et supprimer des wallets pour mieux organiser et protéger vos investissements en crypto-monnaies."
+      address:
+        title: "Adresses"
+        content: "La gestion des adresses de wallet est essentielle pour assurer la sécurité et la confidentialité de vos transactions. Notre plateforme vous permet d'ajouter, modifier et supprimer des adresses pour chacun de vos wallets. En ajoutant une adresse, vous pouvez la lier à un wallet spécifique, ce qui vous permet de suivre et d'organiser vos transactions de manière plus efficace. Notre système vous aide à gérer vos adresses de manière sécurisée et conviviale, vous permettant ainsi de profiter pleinement de vos investissements en crypto-monnaies.
+        \n\nÀ noter : vos adresses sont uniques et strictement personnelles. Aucun autre utilisateur – pas même notre équipe – ne peut accéder ou dupliquer vos adresses. Elles sont entièrement privées et liées uniquement à votre compte."
+
+  user_address:
+    index:
+      h2: "Liste de mes adresses"
+      adding: "Créer une nouvelle adresse"
+      address: "Adresse"
+      copy: "Copier"
+      show_more: "Informations"
+      edit: "Modifier"
+      delete: "Supprimer"
+    edit:
+      h1: "Modifier une adresse"
+      save: "Enregistrer"
+      back_address: "Retour aux adresses"
+    new:
+      h2: "Nouvelle adresse"
+      cancel: "Annuler"
+
+  user_blockchain:
+    index:
+      h2: "Liste de mes blockchains"
+      adding: "Créer une nouvelle blockchain"
+    edit:
+      h1: "Modifier une blockchain"
+      save: "Enregistrer"
+      back_blockchain: "Retour"
+      name: "Nom"
+
+  user_wallet:
+    index:
+      h2: "Liste de mes porte-feuilles"
+      adding: "Créer un nouveau porte-feuille"
+    edit:
+      h1: "Modifier un porte-feuille"
+      save: "Enregistrer"
+      back_wallet: "Retour"
+      name: "Nom"

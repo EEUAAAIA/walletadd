@@ -1,23 +1,21 @@
-<h1> Editer un Wallet </h1>
+<h1><%= t('user_wallet.edit.h1') %></h1>
 
 <%= form_for @user_wallet do |f| %>
 
-  <h3>Modification de Wallet</h3>
-
   <%= f.fields_for :wallet do |w| %>
     <p>
-      Name :  <%= w.text_field :name %>
+      <%= t('user_wallet.edit.name') %>: <%= w.text_field :name %>
     </p>
 
     <p>
-      <%= w.select :blockchain_id, options_for_select(@blockchains, @wallet.blockchain_id) %>
+      Blockchain: <%= w.select :blockchain_id, options_for_select(@blockchains, @wallet.blockchain_id) %>
     </p>
   <% end %>
 
-  <button type="submit"> Enregistrer les modifications </button>
+  <button type="submit"><%= t('user_wallet.edit.save') %></button>
 
 <% end %>
 
 <p>
-  <a href="<%= user_wallets_path %>">Retour aux wallets</a>
+  <a href="<%= user_wallets_path %>"><%= t('user_wallet.edit.back_blockchain') %></a>
 </p>

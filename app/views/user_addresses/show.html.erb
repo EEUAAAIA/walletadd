@@ -1,9 +1,9 @@
-<h2>Informations de <%= @user_address.address.username %></h2>
+<h2>Alias: <%= @user_address.address.username %></h2>
 
 
 <section>
-  <p><%= @user_address.address.address %></p>
-  <p><%= @user_address.address.wallet.name %></p>
+  <p><%= t('user_address.index.address')%>: <%=@user_address.address.address %></p>
+  <p><%= t('home.index.wallet.title')%>: <%= @user_address.address.wallet.name %></p>
 
 </section>
-<a href="<%= user_blockchains_path %>">Retour aux blockchains</a>
+<a href="<%= user_addresses_path %>"><%= t('user_address.edit.back_address') %></a>

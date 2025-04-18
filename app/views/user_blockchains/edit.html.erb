@@ -1,23 +1,21 @@
-<h1> Editer une blockchain </h1>
+<h1><%= t('user_blockchain.edit.h1') %></h1>
 
 <%= form_for @user_blockchain do |f| %>
 
-  <h3>Modification de Blockchain</h3>
-
   <%= f.fields_for :blockchain do |b| %>
     <p>
-      Name :  <%= b.text_field :name %>
+      <%= t('user_blockchain.edit.name') %>: <%= b.text_field :name %>
     </p>
     <p>
-      Description:  <%= b.text_area :description %>
+      Description: <%= b.text_area :description %>
     </p>
   <% end %>
 
 
-<button type="submit"> Enregistrer les modifications </button>
+<button type="submit"><%= t('user_blockchain.edit.save') %></button>
 
 <% end %>
 
 <p>
-  <a href="<%= user_blockchains_path %>">Retour aux blockchains</a>
+  <a href="<%= user_blockchains_path %>"><%= t('user_blockchain.edit.back_blockchain') %></a>
 </p>

@@ -30,4 +30,85 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  devise:
+    sessions:
+      heading: "Welcome to our wallet.add platform"
+      intro: "Discover the ultimate solution to easily and securely manage your digital wallet addresses across various blockchains. Our innovative platform is specifically designed to help you organize and manage your digital assets in a simple and user-friendly way.
+      \n\nOur mission is to make managing your wallet addresses as easy as possible, providing you with a comprehensive and intuitive tool to track, organize, and handle all your addresses in one place.
+      \n\nKey features:
+      \n\n1. Add and manage addresses for various blockchains: Our platform supports a wide range of blockchains, including Bitcoin, Ethereum, Litecoin, and more. Add your addresses in just a few clicks and start managing them today.
+      \n\n2. Organize and track wallets: Create custom categories for your wallets, assign names, and organize them however you like. You can also add notes to each wallet to keep track of transactions and assets.
+      \n\n3. Security and privacy: We take your data security and privacy very seriously. Our platform uses advanced encryption technologies to ensure that only you have access to your information.
+      \n\n4. User-friendly interface: Our sleek and modern interface makes managing your digital wallet addresses a breeze. Easily navigate between wallets and addresses and enjoy a smooth experience.
+      \n\nSign up now and discover how our wallet address management platform can simplify and enhance your digital asset experience. Join the revolution and take control of your crypto investments today!"
+    password: "Password"
+    forget_password: "Forgot your password?"
+    confirm_password: "Confirm your password"
+    remember_me: "Remember me"
+    password_character_minimum: "(%{count} characters minimum)"
+
+  header:
+    home: "Home"
+    wallet: "Wallet"
+    address: "Address"
+    log_in: "Log in"
+    sign_up: "Sign up"
+
+
+  footer:
+    right: "All Rights Reserved. Developed by "
+
+  home:
+    index:
+      h2: "Simplify your digital asset management"
+      intro: "Wallet Ad is a platform designed to help you centralize, organize, and secure your digital assets with ease.\n\nWhether you're a crypto enthusiast, a developer, or a curious investor, our solution allows you to manage all your blockchains, wallets, and addresses in a structured and streamlined way.\n\nUse Wallet Ad to:\n• Document the blockchains you follow or invest in,\n• Create and manage wallets linked to each blockchain,\n• Organize the addresses associated with your wallets for optimal transaction tracking.\n\nThe platform is designed to remain simple, secure, and adaptable to your needs—whether you're using it for personal, professional, or educational purposes."
+      blockchain:
+        title: "Blockchain"
+        content: "Here, you can add, edit, and delete blockchains to organize and track the evolution of the different blockchain technologies you use. By adding a blockchain, you can then associate specific wallets to help manage your digital assets. Our platform supports several popular and emerging blockchains to meet your diverse cryptocurrency needs.
+        \n\nA small detail: when you enter a blockchain that doesn't yet exist in our database, it is automatically added. This allows the community to benefit from everyone's contributions, resulting in a richer and more complete database.\n\nThis is the only piece of data shared between users—everything else remains strictly personal."
+      wallet:
+        title: "Wallet"
+        content: "Our wallet management system allows you to create, manage, and monitor your digital wallets linked to different blockchains. When adding a wallet, you can select the corresponding blockchain from those you’ve previously added. Our platform makes it easy to organize and secure your cryptocurrency investments by centralizing all your wallets in one place."
+      address:
+        title: "Addresses"
+        content: "Managing wallet addresses is essential to ensure the security and privacy of your transactions. Our platform allows you to add, edit, and delete addresses for each of your wallets. By adding an address, you can link it to a specific wallet, making it easier to track and organize your transactions. Our system helps you manage addresses securely and efficiently, so you can make the most of your crypto investments.
+        \n\nNote: your addresses are unique and strictly personal. No other user—not even our team—can access or duplicate them. They are completely private and linked solely to your account."
+
+  user_address:
+    index:
+      h2: "My address's list"
+      adding: "Create a new address"
+      address: "Address"
+      copy: "Copy"
+      show_more: "Show more"
+      edit: "Edit"
+      delete: "Delete"
+    edit:
+      h1: "Edit a address"
+      save: "Save"
+      back_address: "Back"
+    new:
+      h2: "New address"
+      cancel: "Cancel"
+
+  user_blockchain:
+    index:
+      h2: "My blockchain's list"
+      adding: "Create a new blockchain"
+    edit:
+      h1: "Edit a blockchain"
+      save: "Save"
+      back_blockchain: "Back"
+      name: "Name"
+
+
+  user_wallet:
+    index:
+      h2: "My wallet's list"
+      adding: "Create a new wallet"
+    edit:
+      h1: "Edit a wallet"
+      save: "Save"
+      back_wallet: "Back"
+      name: "Name"

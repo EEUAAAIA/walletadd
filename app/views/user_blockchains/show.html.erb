@@ -1,7 +1,7 @@
-<h2>Informations de <%= @user_blockchain.blockchain.name %></h2>
-
+<h1>Information: <%= @user_blockchain.blockchain.name %></h1>
 
 <section>
+  <h2>Description:</h2>
   <p><%= @user_blockchain.blockchain.description %></p>
 </section>
-<a href="<%= user_blockchains_path %>">Retour aux blockchains</a>
+<a href="<%= user_blockchains_path %>"><%= t('user_blockchain.edit.back_blockchain') %></a>

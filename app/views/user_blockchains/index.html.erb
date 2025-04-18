@@ -5,72 +5,82 @@
     </p>
   <% end %>
 </section>
+<section>
+  <article>
+    <h2><%= t('home.index.blockchain.title') %></h2>
+    <p><%= simple_format(t('home.index.blockchain.content')) %></p>
+  </article>
+</section>
 
-<h2>Liste de mes blockchains </h2>
+<h3><%= t('user_blockchain.index.h2') %></h3>
 <br/>
 <br/>
 
 <!--Création de blockchain-->
-<section class="adding">
-    <%= link_to "Créer une blockchain",
-                  new_user_blockchain_path,
-                  class: 'button_add',
-                  data: { turbo_frame: "new_blockchain" } %>
-</section>
-<section>
-  <%= turbo_frame_tag "new_blockchain" %>
-</section>
-<br/>
+  <section class="adding">
+      <%= link_to t('user_blockchain.index.adding'),
+                    new_user_blockchain_path,
+                    class: 'button_add',
+                    data: { turbo_frame: "new_blockchain" } %>
+  </section>
+  <section>
+    <%= turbo_frame_tag "new_blockchain" %>
+  </section>
+<!---->
+
+  <br/>
 
 <!--Affichage mobile/tabllete-->
-<section class="info_mobile">
-  <% @user_blockchains.each do |user_blockchain| %>
-    <article class="info_mobile_list">
-        <p>
-          <%= user_blockchain.blockchain.name %>
-        </p>
-        <p class="action">
-          <a href="<%= user_blockchain_path(user_blockchain.id)%>">
-            <!--SVG Lire la suite--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.707 20.293l-4.146-4.146a7.98 7.98 0 001.646-4.883c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8a7.98 7.98 0 004.883-1.646l4.146 4.146a1 1 0 101.414-1.414zM4 10c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z"/></svg>
-          </a>
-          <a href="<%= edit_user_blockchain_path(user_blockchain.id)%>">Editer</a>
-          <%= button_to "Delete",
-                          user_blockchain_path(user_blockchain),
-                          method: :delete,
-                          data: { action: "user_blockchain#delete" }%>
-        </p>
-    </article>
-  <% end %>
-</section>
+  <section class="info_mobile">
+    <% @user_blockchains.each do |user_blockchain| %>
+      <article class="info_mobile_list">
+          <p>
+            <%= user_blockchain.blockchain.name %>
+          </p>
+          <p class="action">
+            <a href="<%= user_blockchain_path(user_blockchain.id)%>">
+              <!--SVG Lire la suite--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.707 20.293l-4.146-4.146a7.98 7.98 0 001.646-4.883c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8a7.98 7.98 0 004.883-1.646l4.146 4.146a1 1 0 101.414-1.414zM4 10c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z"/></svg>
+            </a>
+            <a href="<%= edit_user_blockchain_path(user_blockchain.id)%>"><%= t('user_address.index.edit') %></a>
+            <%= button_to "Delete",
+                            user_blockchain_path(user_blockchain),
+                            method: :delete,
+                            data: { action: "user_blockchain#delete" }%>
+          </p>
+      </article>
+    <% end %>
+  </section>
+<!---->
 
 <!--Affichage pour écran ordinateur-->
-<section class="info_pc">
-  <table class="table_info">
-    <thead >
-      <tr>
-        <th class="top-left">Blockchain's name</th>
-        <th class="top-right">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user_blockchains.each do |user_blockchain| %>
+  <section class="info_pc">
+    <table class="table_info">
+      <thead >
         <tr>
-          <td class="bottom-left">
-            <%= user_blockchain.blockchain.name %>
-            <br/>
-          </td>
-          <td class="bottom-right">
-            <p class="action">
-              <a href="<%= user_blockchain_path(user_blockchain.id)%>">Lire la suite</a>
-              <a href="<%= edit_user_blockchain_path(user_blockchain.id)%>">Editer</a>
-              <%= button_to "Delete",
-                              user_blockchain_path(user_blockchain),
-                              method: :delete,
-                              data: { action: "user_blockchain#delete" }%>
-            </p>
-          </td>
+          <th class="top-left"><%= t('user_blockchain.edit.name') %></th>
+          <th class="top-right">Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+      </thead>
+      <tbody>
+        <% @user_blockchains.each do |user_blockchain| %>
+          <tr>
+            <td class="bottom-left">
+              <%= user_blockchain.blockchain.name %>
+              <br/>
+            </td>
+            <td class="bottom-right">
+              <p class="action">
+                <a href="<%= user_blockchain_path(user_blockchain.id)%>"><%= t('user_address.index.show_more') %></a>
+                <a href="<%= edit_user_blockchain_path(user_blockchain.id)%>"><%= t('user_address.index.edit') %></a>
+                <%= button_to t('user_address.index.delete'),
+                                user_blockchain_path(user_blockchain),
+                                method: :delete,
+                                data: { action: "user_blockchain#delete" }%>
+              </p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+<!---->

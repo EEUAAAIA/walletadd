@@ -6,7 +6,7 @@
     <%= form_for @user_wallet do |f| %>
       <%= f.fields_for :wallet do |w| %>
         <p>
-          <%= w.text_field :name, placeholder: "Wallet's name" %>
+          <%= w.text_field :name, placeholder: t('user_wallet.edit.name') %>
         </p>
         <p>
           <%= w.label :blockchain_id, "Blockchain" %>
@@ -14,15 +14,15 @@
         </p>
       <% end %>
         <p>
-          <button type="submit"> Enregistrer le wallet </button>
+          <button type="submit"><%= t('user_wallet.edit.save')%></button>
         </p>
         <p>
-          <a href="<%= user_wallets_path %>">Annuler</a>
+          <a href="<%= user_wallets_path %>"><%= t('user_wallet.edit.back_wallet')%></a>
         </p>
     <% end %>
   </section>
 <% end %>
 
 <p>
-  <a href="<%= user_wallets_path %>">Retour aux wallets</a>
+  <a href="<%= user_wallets_path %>"><%= t('user_wallet.edit.back_wallet')%></a>
 </p>

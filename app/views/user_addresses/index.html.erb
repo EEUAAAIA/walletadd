@@ -6,13 +6,13 @@
   <% end %>
 </section>
 
-<h2>Liste de mes addresses </h2>
+<h2><%= t('user_address.index.h2') %></h2>
 <br/>
 <br/>
 
 <!--Création d'address-->
 <section class="adding">
-    <%= link_to "Créer une address",
+    <%= link_to t('user_address.index.adding'),
                   new_user_address_path,
                   class: 'button_add',
                   data: { turbo_frame: "new_address" } %>
@@ -32,7 +32,7 @@
           <%= user_address.address.address %>
         </p>
         <p>
-          <a href="<%= user_address_path(user_address.id)%>">Lire la suite</a>
+          <a href="<%= user_address_path(user_address.id)%>"><%= t('user_address.index.show_more') %></a>
         </p>
         <p>
           <a href="<%= edit_user_address_path(user_address.id)%>">Editer</a>
@@ -85,8 +85,8 @@
   <table class="table_info"  data-controller="clipboard">
     <thead >
       <tr>
-        <th class="top-left">Username</th>
-        <th>Address</th>
+        <th class="top-left">Alias</th>
+        <th><%= t('user_address.index.address') %></th>
         <th class="top-right">Actions</th>
       </tr>
     </thead>
@@ -103,10 +103,10 @@
         </td>
         <td class="bottom-right">
           <p class="action">
-            <button data-action="click->clipboard#copy" class="action_element">Copy to Clipboard</button>
-            <a href="<%= user_address_path(user_address.id)%>">Lire la suite</a>
-            <a href="<%= edit_user_address_path(user_address.id)%>">Editer</a>
-            <%= button_to "Delete",
+            <button data-action="click->clipboard#copy" class="action_element"><%= t('user_address.index.copy') %></button>
+            <a href="<%= user_address_path(user_address.id)%>"><%= t('user_address.index.show_more') %></a>
+            <a href="<%= edit_user_address_path(user_address.id)%>"><%= t('user_address.index.edit') %></a>
+            <%= button_to t('user_address.index.delete'),
                             user_address_path(user_address),
                             method: :delete,
                             class: "delete-btn",

@@ -59,7 +59,7 @@
     text-align: center;
   }
 
-  h2{
+  h2, h3{
     border-bottom: 1px solid #5DFDCB;
     padding-bottom: 10px;
     display: inline-block;

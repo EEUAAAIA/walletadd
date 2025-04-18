@@ -6,24 +6,24 @@
     <%= form_for @user_blockchain do |f| %>
       <%= f.fields_for :blockchain do |b| %>
         <p>
-          <%= b.text_field :name, placeholder: "Blockchain's name" %>
+          <%= b.text_field :name, placeholder: t('user_blockchain.edit.name') %>
           <%= b.object.errors[:name].join(", ") if b.object.errors[:name].present? %>
 
         </p>
         <p>
-          <%= b.text_area :description, placeholder: "Blockchain's description" %>
+          <%= b.text_area :description, placeholder: "Description" %>
         </p>
       <% end %>
         <p>
-          <button type="submit"> Enregistrer la blockchain </button>
+          <button type="submit"><%= t('user_address.new.cancel') %></button>
         </p>
         <p>
-          <a href="<%= user_blockchains_path %>">Annuler</a>
+          <a href="<%= user_blockchains_path %>"><%= t('user_blockchain.index.h2') %></a>
         </p>
     <% end %>
   </section>
 <% end %>
 
 <p>
-  <a href="<%= user_blockchains_path %>">Retour aux blockchains</a>
+  <a href="<%= user_blockchains_path %>"><%= t('user_blockchain.edit.back_blockchain') %></a>
 </p>

@@ -1,4 +1,4 @@
-<h2>New Address 1</h2>
+<h2><%= t('user_address.new.h2') %></h2>
 
 <%= turbo_frame_tag "new_address" do %>
 <br/>
@@ -6,21 +6,21 @@
     <%= form_for @user_address do |f| %>
       <%= f.fields_for :address do |a| %>
         <p>
-          <%= a.text_field :username, placeholder: "Adress' Username" %>
+          <%= a.text_field :username, placeholder: "Alias" %>
         </p>
         <p>
-          <%= a.text_field :address, placeholder: "Adress" %>
+          <%= a.text_field :address, placeholder: t('user_address.index.address') %>
         </p>
         <p>
-          <%= a.label :walletn_id, "Wallet" %>
+          <%= a.label :walletn_id, t('home.index.wallet.title') %>
           <%= a.select :wallet_id, options_for_select(@wallets) %>
         </p>
       <% end %>
         <p>
-          <button type="submit"> Enregistrer l'address </button>
+          <button type="submit"><%= t('user_address.edit.save') %></button>
         </p>
         <p>
-          <a href="<%= user_addresses_path %>">Annuler</a>
+          <a href="<%= user_addresses_path %>"><%= t('user_address.new.cancel') %></a>
         </p>
     <% end %>
   </section>

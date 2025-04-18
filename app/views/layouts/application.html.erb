@@ -19,12 +19,14 @@
         <% if user_signed_in? %>
           Hello, <%= current_user.email %> <strong><%= link_to ' Log out', destroy_user_session_path, method: :delete, class: 'button_log_out' %></strong>
         <% else %>
-          <%= link_to 'Log in', new_user_session_path, class: 'button_log_in' %>
-          <%= link_to 'Sign up', new_user_registration_path, class: 'button_log_in'%>
+          <%= link_to t('header.log_in'), new_user_session_path, class: 'button_log_in' %>
+          <%= link_to t('header.sign_up'), new_user_registration_path, class: 'button_log_in'%>
         <% end %>
+        <%= link_to "Français", url_for(locale: 'fr') %> |
+        <%= link_to "English", url_for(locale: 'en') %>
       </section>
       <section class="site-title-container">
-        <h1 class="site-title">walletadd_6</h1>
+        <h1 class="site-title">walletadd</h1>
       </section>
       <nav data-controller="burger" data-action="resize@window->burger#globalResize">
         <section class="burger-menu">
@@ -37,27 +39,16 @@
         </section>
         <ul class="menu-links" >
             <li>
-              <a href="<%= root_path %>" id="home_button">Home</a>
-            </li>
-            <!--
-            <li>
-              <a href="<%= addresses_path %>">Addresses</a>
+              <a href="<%= root_path %>" id="home_button"><%= t('header.home') %></a>
             </li>
             <li>
-              <a href="<%= blockchains_path %>">Blockchains</a>
+              <a href="<%= user_blockchains_path %>">Blockchain</a>
             </li>
             <li>
-              <a href="<%= wallets_path %>">Wallets</a>
-            </li>
-            -->
-            <li>
-              <a href="<%= user_blockchains_path %>">Blockchain 1</a>
+              <a href="<%= user_wallets_path %>"><%= t('header.wallet') %></a>
             </li>
             <li>
-              <a href="<%= user_wallets_path %>">Wallet 1</a>
-            </li>
-            <li>
-              <a href="<%= user_addresses_path %>">Address 1</a>
+              <a href="<%= user_addresses_path %>"><%= t('header.address') %></a>
             </li>
         </ul>
       </nav>
@@ -67,7 +58,7 @@
     </main>
     <footer>
       <section class="footer-content">
-        <p>&copy; 2023 WalletAdd. Tous droits réservés. Développé par <span class="developer-name">Matthias CANTACUZENE</span>.</p>
+        <p>&copy; <%= Time.current.year %> - WalletAdd. <%= t('footer.right') %><span class="developer-name">Matthias CANTACUZENE</span>.</p>
       </section>
     </footer>
   </body>

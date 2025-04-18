@@ -1,24 +1,23 @@
 <section class="title_underline">
-  <h2>Hello, wallet.add</h2>
+  <h2><%= t('home.index.h2') %></h2>
 </section>
 
 <section>
   <article>
-    <h3>Blockchain</h3>
     <p>
-      Bienvenue sur notre plateforme. Ici, vous pouvez ajouter, modifier et supprimer des blockchains pour organiser et suivre l'évolution des différentes technologies de blockchain que vous utilisez. En ajoutant une blockchain, vous pourrez ensuite y associer des wallets spécifiques pour faciliter la gestion de vos actifs numériques. Notre plateforme prend en charge plusieurs blockchains populaires et émergentes pour répondre à vos besoins diversifiés en matière de crypto-monnaies.
+      <%= simple_format(t('home.index.intro')) %>
     </p>
   </article>
   <article>
-    <h3>Wallet</h3>
-    <p>
-      Notre système de gestion de wallets vous permet de créer, gérer et suivre facilement vos wallets numériques associés à différentes blockchains. En ajoutant un wallet, vous pouvez sélectionner la blockchain correspondante à partir de celles que vous avez ajoutées précédemment. Notre plateforme facilite la gestion de vos actifs numériques en regroupant tous vos wallets en un seul endroit. Vous pouvez facilement ajouter, modifier et supprimer des wallets pour mieux organiser et protéger vos investissements en crypto-monnaies.
-    </p>
+    <h3><%= t('home.index.blockchain.title') %></h3>
+    <p><%= simple_format(t('home.index.blockchain.content')) %></p>
   </article>
   <article>
-    <h3>Addresses</h3>
-    <p>
-      La gestion des adresses de wallet est essentielle pour assurer la sécurité et la confidentialité de vos transactions. Notre plateforme vous permet d'ajouter, modifier et supprimer des adresses pour chacun de vos wallets. En ajoutant une adresse, vous pouvez la lier à un wallet spécifique, ce qui vous permet de suivre et d'organiser vos transactions de manière plus efficace. Notre système vous aide à gérer vos adresses de manière sécurisée et conviviale, vous permettant ainsi de profiter pleinement de vos investissements en crypto-monnaies.
-    </p>
+    <h3><%= t('home.index.wallet.title') %></h3>
+    <p><%= t('home.index.wallet.content') %></p>
+  </article>
+  <article>
+    <h3><%= t('home.index.address.title') %></h3>
+    <p><%= simple_format(t('home.index.address.content')) %></p>
   </article>
 </section>
